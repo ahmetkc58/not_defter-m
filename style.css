@@ -1,0 +1,331 @@
+/* Genel Stil */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Koyu zemin */
+    color: #e0e0e0; /* Açık yazı rengi */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 650px;
+    padding: 25px;
+    background-color: #222; /* Koyu arka plan */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Başlık */
+h1 {
+    text-align: center;
+    color: #f0f0f0; /* Açık başlık rengi */
+}
+
+/* Not Ekleme Alanı */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-container input[type="text"],
+.input-container input[type="url"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    color: #e0e0e0;
+    transition: border-color 0.3s;
+}
+
+.input-container input[type="text"]:focus,
+.input-container input[type="url"]:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+.input-container button {
+    padding: 12px 18px;
+    font-size: 16px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.input-container button:hover {
+    background-color: #1976D2;
+}
+
+/* Filtreleme Butonları */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #444;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #666;
+}
+
+.clear-all {
+    background-color: #f44336;
+    color: white;
+}
+
+.clear-all:hover {
+    background-color: #d32f2f;
+}
+
+/* Not Kartları */
+.note-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.note-card {
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.note-card.completed {
+    background-color: #2e7d32;
+    border-color: #66bb6a;
+}
+
+/* Not Kartı İçeriği */
+.note-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.note-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.note-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.note-buttons button {
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.note-buttons button:hover {
+    transform: scale(1.05);
+}
+
+/* Resim Ekleme Butonu ve Açılır Menü */
+.image-options {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.image-options:hover .dropdown-content {
+    display: block;
+}
+
+#addImageButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Yeşil renk */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Yuvarlak buton */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addImageButton:hover {
+    background-color: #43A047;
+}
+
+.note-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.note-card img,
+.note-card a {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.note-card a {
+    color: #2196F3; /* Link rengi */
+    text-decoration: underline; /* Altı çizili link */
+}
+
+.note-card .note-description {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+#noteDescription {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    color: #e0e0e0;
+    transition: border-color 0.3s;
+    margin-bottom: 10px;
+    resize: vertical; /* Dikey olarak yeniden boyutlandırma */
+}
+
+#noteDescription:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+.note-card {
+    /* ... (Diğer stiller) */
+    font-size: 14px; /* Not boyutunu küçült */
+}
+
+.note-card img,
+.note-card a img {
+    max-width: 80px; /* Resim boyutunu küçült */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer; /* İmleci el işareti yap */
+    transition: transform 0.3s ease; /* Büyütme efekti için geçiş */
+}
+
+.note-card img:hover,
+.note-card a img:hover {
+    transform: scale(1.1); /* Büyütme efekti */
+}
+
+/* Büyütülmüş resim modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content {
+    margin: auto; /* Resmi ortala */
+    display: block;
+    max-width: 95%; /* Resim boyutunu daha da büyüt */
+    max-height: 95%;
+}   
